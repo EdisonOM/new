@@ -17,30 +17,28 @@ public class assignment3 {
 System.out.println("Enter a number: ");
 int n = reader.nextInt(); 
  
- int j = 1;
- if (n < 0) {
+ 
+        
+
+           
+for (int j = 0; j > n - 1; j--) {
+           
+                System.out.println(j);
+                
+            }
+        
+        
+ for (int j = 0; j < n+1; j++) {
+           
+                System.out.println(j);
+                
+            }
+        }
+            }
+
+
+        
             
 
-            boolean done = false;
-            while (!done) {
-                System.out.println(l);
-                if (l == n) {
-                    done = true;
-                }
-                l--;
-            }
-        }
-        if (n > 0) {
-            boolean done = false;
-            while (!done) {
-                System.out.println(j);
-                if (j == n) {
-                    done = true;
-                }
-
-                j++;
-            }
-
-        }
-    }
-}
+        
+    
