@@ -18,7 +18,7 @@ public class assignment20 {
     public static void main(String[] args) {
         List<String> theList = new ArrayList();
         int i;
-        int p;
+
         Scanner reader = new Scanner(System.in);  // Reading from System.in
         System.out.println("Enter your string: ");
         String username = reader.next();

@@ -13,15 +13,16 @@ import java.util.Scanner;
  * @author Edison.Morrow
  */
 public class assignment8 {
-     public static void main(String[] args) {
-         Random rand = new Random();
-        int  s = rand.nextInt(10);
+
+    public static void main(String[] args) {
+        Random rand = new Random();
+        Scanner reader = new Scanner(System.in);
+        int s = rand.nextInt(10);
         int n;
-         do{
-         Scanner reader = new Scanner(System.in);  // Reading from System.in
-        System.out.println("Enter a number: ");
-         n = reader.nextInt();
-         }while(n != s);
-     }
-}
-        
+        do {
+
+            System.out.println("Enter a number: ");
+            n = reader.nextInt();
+        } while (n != s);
+    }
+}     

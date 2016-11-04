@@ -13,17 +13,17 @@ import java.util.Scanner;
  * @author Edison.Morrow
  */
 public class assignment {
+
     public static void main(String[] args) {
-         Scanner reader = new Scanner(System.in);  // Reading from System.in
-System.out.println("Enter a number: ");
-int n = reader.nextInt();
-        for (int j = 0; j < n+1; j++) {
+        Scanner reader = new Scanner(System.in);  // Reading from System.in
+        System.out.println("Enter a number: ");
+        int n = reader.nextInt();
+        for (int j = 0; j < n + 1; j++) {
             Random rand = new Random();
-        int  s = rand.nextInt();
-        System.out.println(s);
+            int s = rand.nextInt();
+            System.out.println(s);
+        }
     }
 }
-}
-
 
 

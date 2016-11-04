@@ -12,11 +12,13 @@ import java.util.Scanner;
  * @author Edison.Morrow
  */
 public class assignment10 {
-      public static void main(String[] args) {
-            Scanner reader = new Scanner(System.in);  // Reading from System.in
-        System.out.println("Enter a number: ");
-        double n = reader.nextDouble()*.5;
-        double j = n*n*3.14;
-        System.out.println(j);
-      }
+
+    public static void main(String[] args) {
+
+        Scanner reader = new Scanner(System.in);  // Reading from System.in
+        System.out.println("Enter a radius: ");
+        double enteredRadius = reader.nextDouble();
+        double area = enteredRadius * enteredRadius * 3.14;
+        System.out.println(area);
+    }
 }
