@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class assignment19 {
 
     public static void main(String[] args) {
-        int i;
+        int i ;
         Scanner reader = new Scanner(System.in);  // Reading from System.in
         System.out.println("Enter your string: ");
         String username = reader.next();

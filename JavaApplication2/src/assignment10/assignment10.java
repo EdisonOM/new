@@ -18,7 +18,8 @@ public class assignment10 {
         Scanner reader = new Scanner(System.in);  // Reading from System.in
         System.out.println("Enter a radius: ");
         double enteredRadius = reader.nextDouble();
-        double area = enteredRadius * enteredRadius * 3.14;
+        double area = Math.PI*enteredRadius * enteredRadius ;
         System.out.println(area);
+        
     }
 }
