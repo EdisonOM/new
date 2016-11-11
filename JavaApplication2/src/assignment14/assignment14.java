@@ -40,8 +40,9 @@ public class assignment14 {
                 sum += theList.get(i);
                 sqr = Math.sqrt(maybePositive);
                 System.out.println(sqr);
+                numberOfnumbers++;
             }
-            numberOfnumbers++;
+            
         }
         average = sum / numberOfnumbers;
         System.out.println(sum);

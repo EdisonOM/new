@@ -6,8 +6,7 @@
 package assignment17;
 
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
 
 /**
  *
@@ -18,12 +17,10 @@ public class assignment17 {
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);  // Reading from System.in
         System.out.println("Enter your string: ");
-        String username = reader.next();
-        Matcher m = Pattern.compile("$").matcher(username);
-        m.find();
-        int length = m.end();
-        String result = username.substring(0, length).toUpperCase();
-        String result1 = username.substring(0, length).toLowerCase();
+        String username = reader.next();      
+        
+        String result = username.toUpperCase();
+        String result1 = username.toLowerCase();
         System.out.println(result);
         System.out.println(result1);
     }

@@ -18,11 +18,11 @@ public class assignment29 {
     public static void main(String[] args) {
 
         ArrayList<Character> list = new ArrayList<Character>();
-        for (int i = 1; i < 70000; i++) {
+        for (int i = 1; i < 65535; i++) {
             list.add(new Character((char) i));
         }
         Collections.shuffle(list);
-        for (int i = 0; i < 65535; i++) {
+        for (int i = 0; i < 11; i++) {
             System.out.print(list.get(i));
         }
     }
