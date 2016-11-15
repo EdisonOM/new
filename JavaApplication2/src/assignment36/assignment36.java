@@ -5,6 +5,8 @@
  */
 package assignment36;
 
+import java.util.Random;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,14 +16,40 @@ import javax.swing.JOptionPane;
 public class assignment36 {
 
     public static void main(String[] args) {
-        String[] choices = {"Distance away from number", "High of Low",};
-        String algore = (String) JOptionPane.showInputDialog(null, "What's the "
-                + "color of the circle?", "Color", JOptionPane.QUESTION_MESSAGE,null,choices,choices[1]);
-        if (algore.equals("Distance away from number")){
-            
+        Random rand = new Random();
+        Scanner reader = new Scanner(System.in);
+        int s = rand.nextInt(1000) + 1;
+        int n;
+        String[] choices = {"Distance away from number", "High or Low",};
+        String algore = (String) JOptionPane.showInputDialog(null, "which "
+                + "algorithim", "Color", JOptionPane.QUESTION_MESSAGE, null, choices, choices[1]);
+        if (algore.equals("Distance away from number")) {
+            do {
+
+                System.out.println("Enter a number: ");
+                n = reader.nextInt();
+                if (n > s) {
+                    System.out.println(n - s + " too high");
+                }
+                if (n < s) {
+                    System.out.println(s - n + " too low");
+                }
+            } while (n != s);
         }
- if (algore.equals("High of Low")){
-            
+
+        if (algore.equals("High or Low")) {
+            do {
+
+                System.out.println("Enter a number: ");
+                n = reader.nextInt();
+                if (n >= s) {
+                    System.out.println("too high");
+                }
+                if (n <= s) {
+                    System.out.println("too low");
+                }
+            } while (n != s);
         }
     }
+
 }
