@@ -20,54 +20,47 @@ public class assignment31 {
         int p;
         int s;
         int x;
-        int m =0;
         int coder = 32;
         int coderValue = 127;
 
         List<Character> baseChar = new ArrayList();
         List<Integer> greaterThanCoderValue = new ArrayList();
         List<Integer> diffBetweenCodedAsciiAndCoderValue = new ArrayList();
-        List<Integer> theList4 = new ArrayList();
+        List<Integer> decodedAsciiList = new ArrayList();
         List<Integer> lessThanCoderValue = new ArrayList();
         List<Integer> encodedSequence = new ArrayList();
         Scanner reader = new Scanner(System.in);  // Reading from System.in
         System.out.println("Enter your string: ");
         String username = reader.next();
         for (i = 0; i != username.length(); i++) {
-
             char a_char = username.charAt(i);
-
             baseChar.add(a_char);
         }
         for (p = 0; p != baseChar.size(); p++) {
-            int codedAscii = 10 + (int)baseChar.get(p);
+            int codedAscii = 10 + (int) baseChar.get(p);
             lessThanCoderValue.add(codedAscii);
             encodedSequence.add(codedAscii);
             if (codedAscii > coderValue) {
                 lessThanCoderValue.remove(codedAscii);
                 encodedSequence.remove(codedAscii);
-                lessThanCoderValue.add(0);
+                lessThanCoderValue.add(-1);
                 encodedSequence.add(coder + codedAscii - coderValue);
                 greaterThanCoderValue.add(coder + codedAscii - coderValue);
                 diffBetweenCodedAsciiAndCoderValue.add(codedAscii - coderValue);
-               
             }
-              
         }
         System.out.println(encodedSequence);
-        for (s = 0; s !=lessThanCoderValue.size() ; s++ ) {           
-            theList4.add(lessThanCoderValue.get(s)-10);
-            if(lessThanCoderValue.get(s)==0){
-                theList4.remove(lessThanCoderValue.get(s)-10);
-                theList4.add(greaterThanCoderValue.get(s) - diffBetweenCodedAsciiAndCoderValue.get(s) - 10);
-            }         
+        for (s = 0; s != lessThanCoderValue.size(); s++) {
+            decodedAsciiList.add(lessThanCoderValue.get(s) - 10);
+            if (lessThanCoderValue.get(s) == -1) {
+                decodedAsciiList.remove(lessThanCoderValue.get(s) - 10);
+                decodedAsciiList.add(greaterThanCoderValue.get(s) - diffBetweenCodedAsciiAndCoderValue.get(s) - 10);
+            }
         }
-        System.out.println(theList4);
-        for (x = 0; x != theList4.size(); x++) {
-            String decoded = String.valueOf(Character.toChars(theList4.get(x)));
+        System.out.println(decodedAsciiList);
+        for (x = 0; x != decodedAsciiList.size(); x++) {
+            String decoded = String.valueOf(Character.toChars(decodedAsciiList.get(x)));
             System.out.println(decoded);
         }
     }
 }
-
-
