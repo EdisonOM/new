@@ -37,7 +37,7 @@ public class Trash {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
         String line = null;
         while ((line = bufferedReader.readLine()) != null) {
-            for (int i = 0; i != line.length(); i++) {
+            for (int i = 0; i < line.length(); i++) {
                 char a_char = line.charAt(i);
                 baseChar.add(a_char);
             }
@@ -47,7 +47,7 @@ public class Trash {
                 o++;
             }
         }
-        System.out.println(o);
+        System.out.println(o+" exists in this page and its code");
     }
 }
 
