@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.apa.shape.app;
+package org.apa.bark.app;
 
 import java.util.Scanner;
 import javax.swing.JOptionPane;
-import org.apa.shape.shapes.BaseShape;
-import org.apa.shape.shapes.Circle;
-import org.apa.shape.shapes.Square;
-import org.apa.shape.shapes.Triangle;
+
+
 
 /**
  *
@@ -18,8 +16,8 @@ import org.apa.shape.shapes.Triangle;
  */
 public class Menue {
 
-    public String getBarker () {
-String[] choices = {"Bark Like <<Your subsequent entered name>>", "Bark like a dog", "Bark like a cat", "Bark like a mouse"};
+    public static void Menue () {
+String[] choices = {"Bark Like <<Your subsequent entered name>>", "Bark like a dog", "Bark like a cat", "Bark like a mouse", "exit"};
         String barker = (String) JOptionPane.showInputDialog(null, "Choose a "
                 + "Barker!", "Barkers:", JOptionPane.QUESTION_MESSAGE,
                 null,
@@ -27,35 +25,29 @@ String[] choices = {"Bark Like <<Your subsequent entered name>>", "Bark like a d
                 choices[1]);
         
         Scanner reader = new Scanner(System.in);
-        System.out.println("Enter a number: ");
         
         switch (barker) {
             case "Bark Like <<Your subsequent entered name>>":
                 System.out.println("Enter a Username: ");
                 String username = reader.next();
-                PersonalBarker personalBarker = new PersonalBarker(String username);
-
-                return personalBarker;
-
+                UsernameBarker.bark(username);
+                break; 
             case "Bark like a dog":
-                DogBarker dogBarker = new DogBarker();
-
-                return dogBarker;
-
+               DogBarker.bark();
+               break;
             case "Bark like a cat":
-                CatBarker catBarker = new CatBarker();
-
-                return catBarker;
+               CatBarker.bark();
+               break;
+                
             case "Bark like a mouse":
-                MouseBarker mouseBarker = new MouseBarker();
-
-                return mouseBarker;
+                MouseBarker.bark();
+                break;
 
             default:
-                System.out.println("Incomatable character or value");
+                System.out.println("exiting");
                 break;
         }
-        return null;
+       
 
     }
 }
