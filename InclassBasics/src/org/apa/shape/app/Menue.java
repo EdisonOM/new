@@ -6,6 +6,7 @@
 package org.apa.shape.app;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 import org.apa.shape.shapes.BaseShape;
 import org.apa.shape.shapes.Circle;
 import org.apa.shape.shapes.Square;
@@ -17,30 +18,38 @@ import org.apa.shape.shapes.Triangle;
  */
 public class Menue {
 
-    public BaseShape getShape() {
-
-        System.out.println("Enter desired shape for area.");
-        System.out.println("1.Area of square.");
-        System.out.println("2.Area of circle.");
-        System.out.println("3.Area of triangle.");
+    public String getBarker () {
+String[] choices = {"Bark Like <<Your subsequent entered name>>", "Bark like a dog", "Bark like a cat", "Bark like a mouse"};
+        String barker = (String) JOptionPane.showInputDialog(null, "Choose a "
+                + "Barker!", "Barkers:", JOptionPane.QUESTION_MESSAGE,
+                null,
+                choices,
+                choices[1]);
+        
         Scanner reader = new Scanner(System.in);
         System.out.println("Enter a number: ");
-        int option = reader.nextInt();
-        switch (option) {
-            case 1:
-                Square square = new Square();
+        
+        switch (barker) {
+            case "Bark Like <<Your subsequent entered name>>":
+                System.out.println("Enter a Username: ");
+                String username = reader.next();
+                PersonalBarker personalBarker = new PersonalBarker(String username);
 
-                return square;
+                return personalBarker;
 
-            case 2:
-                Circle circle = new Circle();
+            case "Bark like a dog":
+                DogBarker dogBarker = new DogBarker();
 
-                return circle;
+                return dogBarker;
 
-            case 3:
-                Triangle triangle = new Triangle();
+            case "Bark like a cat":
+                CatBarker catBarker = new CatBarker();
 
-                return triangle;
+                return catBarker;
+            case "Bark like a mouse":
+                MouseBarker mouseBarker = new MouseBarker();
+
+                return mouseBarker;
 
             default:
                 System.out.println("Incomatable character or value");

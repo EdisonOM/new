@@ -15,7 +15,7 @@ public class Shape {
 
     public static void main(String[] args) {
         Menue menue = new Menue();
-        BaseShape shape = menue.getShape();
+        String barker = menue.getBarker();
         shape.acceptParameters();
         shape.calculateArea();
         shape.displayResults();
