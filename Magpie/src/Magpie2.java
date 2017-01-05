@@ -33,13 +33,13 @@ public class Magpie2 {
         String response = "";
         if (statement.indexOf("no") >= 0) {
             response = "Why so negative?";
-        } else if (statement.equals("mother")
-                || statement.equals("father") 
-                || statement.equals("sister") 
-                || statement.equals("brother")) {
+        } else if (statement.indexOf("mother") >= 0
+                || statement.indexOf("father") >= 0
+                || statement.indexOf("sister") >= 0
+                || statement.indexOf("brother") >= 0) {
             response = "Tell me more about your family.";
-        } else if (statement.equals("dog") 
-                || statement.equals("mother") ) {
+        } else if (statement.indexOf("dog") >= 0
+                || statement.indexOf("mother") >= 0) {
             response = "tell me more about your pets";
         } else if (statement.indexOf("Dr.Jones") >= 0) {
             response = "He sounds like a good teacher";

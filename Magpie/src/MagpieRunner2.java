@@ -16,25 +16,28 @@ public class MagpieRunner2
 	 */
 	public static void main(String[] args)
 	{
+             String statement = "";
 		Magpie2 maggie = new Magpie2();
-		List<Character> baseChar = new ArrayList();
+		List<String> baseChar = new ArrayList();
 		System.out.println (maggie.getGreeting());
 		Scanner in = new Scanner (System.in);
 		String priorStatement = in.nextLine();
-		for(int x = 1; x < priorStatement.length();){
+		int x;
+                for(x = 0; x < priorStatement.length();){
                     String a_char = ""+priorStatement.charAt(x); 
-                    for(String f =""; !f.equals(a_char); x++ ){
-                        baseChar.add(priorStatement.charAt(x));
-                    }
+                  for(String f =" "; !f.equals(a_char) && x < priorStatement.length(); x++){
+                       baseChar.add(a_char);
+                   
+                  }
                 }
-                String statement = "";
-               for(int i = 0; i!= baseChar.size();i++){
-                   statement += ""+baseChar.get(i);
+                
+               for(int i = 0; i< baseChar.size();i++){
+                   statement = statement+baseChar.get(i);
                }
 		while (!statement.equals("Bye"))
 		{
 			System.out.println (maggie.getResponse(statement));
-			statement = in.nextLine();
+			priorStatement = in.nextLine();
 		}
 	}
 
