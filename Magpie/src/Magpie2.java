@@ -31,29 +31,29 @@ public class Magpie2 {
      */
     public String getResponse(String statement) {
         String response = "";
-        if (statement.indexOf("no") >= 0) {
+        if (statement.equals("no")) {
             response = "Why so negative?";
-        } else if (statement.indexOf("mother") >= 0
-                || statement.indexOf("father") >= 0
-                || statement.indexOf("sister") >= 0
-                || statement.indexOf("brother") >= 0) {
+        } else if (statement.equals("mother")
+                || statement.equals("father")
+                || statement.equals("sister")
+                || statement.equals("brother")) {
             response = "Tell me more about your family.";
-        } else if (statement.indexOf("dog") >= 0
-                || statement.indexOf("mother") >= 0) {
+        } else if (statement.equals("dog")
+                || statement.equals("cat")) {
             response = "tell me more about your pets";
-        } else if (statement.indexOf("Dr.Jones") >= 0) {
+        } else if (statement.equals("Dr.Jones")) {
             response = "He sounds like a good teacher";
 
-        } else if (statement.indexOf("") >= 0) {
+        } else if (statement.equals(" ")) {
             response = "Say something, please";
 
-        } else if (statement.indexOf("yes") >= 0) {
+        } else if (statement.equals("yes")) {
             response = "Why so Positive?";
 
-        } else if (statement.indexOf("maybe") >= 0) {
+        } else if (statement.equals("maybe")) {
             response = "ok";
 
-        } else if (statement.indexOf("ok") >= 0) {
+        } else if (statement.equals("ok")) {
             response = "Why so neutral?";
 
         } else {
