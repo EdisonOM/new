@@ -27,7 +27,7 @@ public class MagpieRunner2 {
         Scanner in = new Scanner(System.in);
         priorStatement = in.nextLine();
 
-        while (!statement.equals("Bye")) {
+        while (!priorStatement.equals("Bye")) {
             for (x = 0; x < priorStatement.length();) {
                 String a_char = "" + priorStatement.charAt(x);
                 for (String f = " "; !f.equals(a_char) && x < priorStatement.length(); x++) {

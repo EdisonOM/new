@@ -31,8 +31,7 @@ public class Magpie2 {
      */
     public String getResponse(String statement) {
         String response = "";
-        String str = "";
-        int z = 0;
+
         if (statement.equals("no")) {
             response = "Why so negative?";
         } else if (statement.equals("mother")
