@@ -31,6 +31,8 @@ public class Magpie2 {
      */
     public String getResponse(String statement) {
         String response = "";
+        String str = "";
+        int z = 0;
         if (statement.equals("no")) {
             response = "Why so negative?";
         } else if (statement.equals("mother")
@@ -56,8 +58,9 @@ public class Magpie2 {
         } else if (statement.equals("ok")) {
             response = "Why so neutral?";
 
-        } else {
+        } else if (MagpieRunner2.getStatement().length() == MagpieRunner2.getLength()) {
             response = getRandomResponse();
+
         }
         return response;
     }

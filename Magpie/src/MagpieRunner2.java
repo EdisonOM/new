@@ -11,6 +11,9 @@ import java.util.Scanner;
  */
 public class MagpieRunner2 {
 
+    static String priorStatement;
+    static int x;
+
     /**
      * Create a Magpie, give it user input, and print its replies.
      *
@@ -22,8 +25,8 @@ public class MagpieRunner2 {
         List<String> baseChar = new ArrayList();
         System.out.println(maggie.getGreeting());
         Scanner in = new Scanner(System.in);
-        String priorStatement = in.nextLine();
-        int x;
+        priorStatement = in.nextLine();
+
         while (!statement.equals("Bye")) {
             for (x = 0; x < priorStatement.length();) {
                 String a_char = "" + priorStatement.charAt(x);
@@ -35,11 +38,23 @@ public class MagpieRunner2 {
                 for (int i = 0; i < baseChar.size(); i++) {
                     statement = statement + baseChar.get(i);
                 }
-                System.out.println(statement);
+
                 System.out.println(maggie.getResponse(statement));
+                baseChar.clear();
+                statement = "";
             }
             priorStatement = in.nextLine();
         }
 
     }
+
+    public static String getStatement() {
+        return priorStatement;
+    }
+
+    public static Integer getLength() {
+        return x;
+    }
+
 }
+
