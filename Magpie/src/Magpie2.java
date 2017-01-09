@@ -1,4 +1,6 @@
 
+
+
 /**
  * A program to carry on conversations with a human user.
  * This is the initial version that:
@@ -27,9 +29,11 @@ public class Magpie2 {
      * Gives a response to a user statement
      *
      * @param statement the user statement
+     * @param priorStatement
+     * @param x
      * @return a response based on the rules given
      */
-    public String getResponse(String statement) {
+    public String getResponse(String statement,String priorStatement,Integer x) {
         String response = "";
 
         if (statement.equals("no")) {
@@ -57,7 +61,7 @@ public class Magpie2 {
         } else if (statement.equals("ok")) {
             response = "Why so neutral?";
 
-        } else if (MagpieRunner2.getStatement().length() == MagpieRunner2.getLength()) {
+        } else if (priorStatement.length() == x) {
             response = getRandomResponse();
 
         }
