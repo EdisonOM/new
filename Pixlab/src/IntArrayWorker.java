@@ -98,5 +98,32 @@ public class IntArrayWorker
       }
     }
   }
+
+    int getColTotal(int number) {
+     {
+      int count = 0;
+      for (int[] rowArray : matrix)
+      {
+          for (int i : rowArray)
+          {
+              if (i == number)
+              {
+                  count++;
+              }
+          }
+      }
+      
+      return count;
+  }
+    }
+    int getLargest() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    int getCount(int i) {
+        return i;
+    }
+
+   
  
 }
