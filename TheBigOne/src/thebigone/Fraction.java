@@ -45,13 +45,13 @@ public class Fraction {
 //    public String toString() {
 //        return "Fraction{" + "numerator=" + numerator + ", denominator=" + denominator + '}';
 //    }
-    public static long gcm(long a, long b) {
-    return b == 0 ? a : gcm(b, a % b); // Not bad for one line of code :)
+    public static long gcm(int numerator, int denominator) {
+    return denominator == 0 ? numerator : gcm(denominator, numerator % denominator); // Not bad for one line of code :)
 }
 
-public static String asFraction(long a, long b) {
-    long gcm = gcm(a, b);
-    return (a / gcm) + "/" + (b / gcm);
+public static String asFraction(int numerator, int denominator) {
+    long gcm = gcm(numerator, denominator);
+    return (numerator / gcm) + "/" + (denominator / gcm);
 }
     @Override
     public String toString() {
