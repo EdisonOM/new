@@ -11,8 +11,7 @@ package thebigone;
 
 
 /**
- *
- * @author tim
+ 
  */
 public class Fraction {
     
@@ -32,17 +31,32 @@ public class Fraction {
     public int getNumerator() {
         return this.numerator;
     }
-    
+
     public int getDenominator() {
         return this.denominator;
     }
+    public Boolean isZero(int numerator, int denominator) {
+        if (this.denominator == 0) {
+            return true;
+        }
+        return false;
+    }
+//    @Override
+//    public String toString() {
+//        return "Fraction{" + "numerator=" + numerator + ", denominator=" + denominator + '}';
+//    }
+    public static long gcm(long a, long b) {
+    return b == 0 ? a : gcm(b, a % b); // Not bad for one line of code :)
+}
 
+public static String asFraction(long a, long b) {
+    long gcm = gcm(a, b);
+    return (a / gcm) + "/" + (b / gcm);
+}
     @Override
     public String toString() {
-        return "Fraction{" + "numerator=" + numerator + ", denominator=" + denominator + '}';
+        return "Fraction{"  + numerator + "/" + denominator + '}';
     }
-    
-    
     
     
 }
